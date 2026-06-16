@@ -46,6 +46,74 @@ namespace Snowman.Editor
                     hp = (float)(row.GetCell(1)?.NumericCellValue ?? 0),
                     goldReward = (int)(row.GetCell(2)?.NumericCellValue ?? 0)
                 });
+
+                ImportSheet<SkillConfigSO>(workbook, "Skills", row => new SkillConfigSO
+                {
+                    id = row.GetCell(0)?.StringCellValue ?? "",
+                    damageMultiplier = (float)(row.GetCell(1)?.NumericCellValue ?? 0),
+                    cooldown = (float)(row.GetCell(2)?.NumericCellValue ?? 0),
+                    duration = (float)(row.GetCell(3)?.NumericCellValue ?? 0),
+                    manaCost = (int)(row.GetCell(4)?.NumericCellValue ?? 0),
+                    baseUpgradeCost = (int)(row.GetCell(5)?.NumericCellValue ?? 0),
+                    maxLevel = (int)(row.GetCell(6)?.NumericCellValue ?? 0)
+                });
+
+                ImportSheet<PetConfigSO>(workbook, "Pets", row => new PetConfigSO
+                {
+                    id = row.GetCell(0)?.StringCellValue ?? "",
+                    tier = (int)(row.GetCell(1)?.NumericCellValue ?? 0),
+                    attackDamage = (float)(row.GetCell(2)?.NumericCellValue ?? 0),
+                    attackSpeed = (float)(row.GetCell(3)?.NumericCellValue ?? 0),
+                    buffType = row.GetCell(4)?.StringCellValue ?? "",
+                    buffValue = (float)(row.GetCell(5)?.NumericCellValue ?? 0),
+                    unlockStage = (int)(row.GetCell(6)?.NumericCellValue ?? 0)
+                });
+
+                ImportSheet<RebirthConfigSO>(workbook, "Rebirth", row => new RebirthConfigSO
+                {
+                    id = row.GetCell(0)?.StringCellValue ?? "",
+                    stageRequired = (int)(row.GetCell(1)?.NumericCellValue ?? 0),
+                    atkMultiplierBonus = (float)(row.GetCell(2)?.NumericCellValue ?? 0),
+                    goldMultiplierBonus = (float)(row.GetCell(3)?.NumericCellValue ?? 0),
+                    startLevelBonus = (int)(row.GetCell(4)?.NumericCellValue ?? 0)
+                });
+
+                ImportSheet<QuestConfigSO>(workbook, "Quests", row => new QuestConfigSO
+                {
+                    id = row.GetCell(0)?.StringCellValue ?? "",
+                    questType = row.GetCell(1)?.StringCellValue ?? "",
+                    requirementType = row.GetCell(2)?.StringCellValue ?? "",
+                    requirementValue = (int)(row.GetCell(3)?.NumericCellValue ?? 0),
+                    rewardGold = (int)(row.GetCell(4)?.NumericCellValue ?? 0),
+                    rewardItemId = row.GetCell(5)?.StringCellValue ?? ""
+                });
+
+                ImportSheet<AchievementConfigSO>(workbook, "Achievements", row => new AchievementConfigSO
+                {
+                    id = row.GetCell(0)?.StringCellValue ?? "",
+                    requirementType = row.GetCell(1)?.StringCellValue ?? "",
+                    requirementValue = (int)(row.GetCell(2)?.NumericCellValue ?? 0),
+                    rewardGold = (int)(row.GetCell(3)?.NumericCellValue ?? 0),
+                    permanentStatBonus = (float)(row.GetCell(4)?.NumericCellValue ?? 0)
+                });
+
+                ImportSheet<DungeonConfigSO>(workbook, "Dungeons", row => new DungeonConfigSO
+                {
+                    id = row.GetCell(0)?.StringCellValue ?? "",
+                    dungeonType = row.GetCell(1)?.StringCellValue ?? "",
+                    dailyEntryLimit = (int)(row.GetCell(2)?.NumericCellValue ?? 0),
+                    monsterHpMultiplier = (float)(row.GetCell(3)?.NumericCellValue ?? 0),
+                    goldRewardMultiplier = (float)(row.GetCell(4)?.NumericCellValue ?? 0),
+                    unlockStage = (int)(row.GetCell(5)?.NumericCellValue ?? 0)
+                });
+
+                ImportSheet<OfflineRewardConfigSO>(workbook, "OfflineRewards", row => new OfflineRewardConfigSO
+                {
+                    id = row.GetCell(0)?.StringCellValue ?? "",
+                    goldPerHourBase = (float)(row.GetCell(1)?.NumericCellValue ?? 0),
+                    experiencePerHourBase = (float)(row.GetCell(2)?.NumericCellValue ?? 0),
+                    goldGrowthRate = (float)(row.GetCell(3)?.NumericCellValue ?? 0)
+                });
             }
 
             AssetDatabase.SaveAssets();

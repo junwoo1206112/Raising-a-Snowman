@@ -1,6 +1,6 @@
 # 프로젝트 개발 진행 상황 (Raising a Snowman)
 
-마지막 업데이트: 2026-04-24
+마지막 업데이트: 2026-04-27
 
 ## 1. 개발 환경 및 설정 (Setup Guide)
 다른 PC에서 이 프로젝트를 열 때 다음 사항을 확인하십시오.
@@ -21,6 +21,8 @@
 - [x] DI(의존성 주입) 컨테이너 설정 (정적 Dictionary 기반 `Snowman.Core.DI`)
 - [x] `GameDataManager` (IDataService 구현체, Resources.LoadAll 기반 SO 로드)
 - [x] `CurrencyManager` (골드 관리, K/M/B 단위 포맷팅)
+- [x] 확장 데이터 타입 추가 (Skill, Pet, Rebirth, Quest, Achievement, Dungeon, OfflineReward)
+- [x] 엑셀 밸런스 데이터 초기값 채우기 (`Snowman > Data > Populate Excel with Game Data`)
 
 ### Phase 2: 전투 루프 (대기 - 다음 단계)
 - [ ] PlayerController (자동 이동, 애니메이션 제어)

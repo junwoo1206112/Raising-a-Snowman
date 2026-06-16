@@ -25,3 +25,7 @@ JetBrains/
 *.sln
 .consulo/
 PackageCache/
+
+# Temp files
+nul
+.opencode/
